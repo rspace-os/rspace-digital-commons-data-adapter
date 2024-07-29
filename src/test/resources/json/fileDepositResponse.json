@@ -1,0 +1,13 @@
+{
+  "ticket_id": "f76cc344-0d03-4ef2-8f34-620ba0972acc",
+  "filename": "Picture1.png",
+  "description": "immagine prova",
+  "size": 72169,
+  "media_type": "application/octet-stream",
+  "sha256_hash": "afa16115c42032ac1d6c7354a48dc3ab282bdf5f9bfefe70356ee0e0852ee1f3",
+  "id": "790f0bbd-dbe9-4535-a230-897b4a44d1c2",
+  "$ref": "/active-data-entities/datasets/drafts/wmm5zcwskc/files/790f0bbd-dbe9-4535-a230-897b4a44d1c2",
+  "parent_folder": {
+    "$ref": "/active-data-entities/datasets/drafts/wmm5zcwskc/files/790f0bbd-dbe9-4535-a230-897b4a44d1c2/parent_folder"
+  }
+}

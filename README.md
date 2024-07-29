@@ -1,1 +1,2 @@
-# rspace-os-rspace-digital-commons-data-adapter
+# rspace-digital-commons-data-adapter
+DigitalCommonsData <-> RSpace repository adapter
