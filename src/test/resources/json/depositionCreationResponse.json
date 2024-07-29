@@ -1,0 +1,35 @@
+{
+  "name": "test_code_1",
+  "description": "test_code_1",
+  "method": "post",
+  "is_confidential": false,
+  "created_date": "2024-07-25T15:46:46.014Z",
+  "$ref": "/active-data-entities/datasets/drafts/d7s7hypvt4",
+  "licence": {
+    "$ref": "/active-data-entities/datasets/drafts/d7s7hypvt4/licence"
+  },
+  "articles": "/active-data-entities/datasets/drafts/d7s7hypvt4/articles",
+  "categories": "/active-data-entities/datasets/drafts/d7s7hypvt4/categories",
+  "contributors": "/active-data-entities/datasets/drafts/d7s7hypvt4/contributors",
+  "files": "/active-data-entities/datasets/drafts/d7s7hypvt4/files",
+  "folders": "/active-data-entities/datasets/drafts/d7s7hypvt4/folders",
+  "versions": "/active-data-entities/datasets/drafts/d7s7hypvt4/versions",
+  "institutions": "/active-data-entities/datasets/drafts/d7s7hypvt4/institutions",
+  "funders": {
+    "$ref": "/active-data-entities/datasets/drafts/d7s7hypvt4/funders"
+  },
+  "related_links": "/active-data-entities/datasets/drafts/d7s7hypvt4/related_links",
+  "organisational_units": "/active-data-entities/datasets/drafts/d7s7hypvt4/organisational_units",
+  "metadata": "/active-data-entities/datasets/drafts/d7s7hypvt4/metadata",
+  "id": "d7s7hypvt4",
+  "doi": {
+    "status": "reserved",
+    "id": "10.17632/d7s7hypvt4.1",
+    "prefix": "10.17632"
+  },
+  "version": 1,
+  "customer_id": "7377952c-6404-4428-bbfc-77242cfc301e",
+  "owner": {
+    "$ref": "/profiles/5f68184e-440a-44ec-958f-25cd216af882"
+  }
+}
