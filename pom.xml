@@ -10,7 +10,7 @@
   </parent>
 
   <artifactId>rspace-digital-commons-data-adapter</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.5</version>
 
   <repositories>
     <repository>
@@ -99,7 +99,7 @@
     <dependency>
       <groupId>com.github.rspace-os</groupId>
       <artifactId>digital-commons-data-java-client</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3</version>
     </dependency>
   </dependencies>
 </project>
