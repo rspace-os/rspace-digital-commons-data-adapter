@@ -6,7 +6,7 @@
   <parent>
     <artifactId>rspace-parent</artifactId>
     <groupId>com.github.rspace-os</groupId>
-    <version>3.0.0</version>
+    <version>rsdev-444-upgrade-to-spring-6-SNAPSHOT</version>
   </parent>
 
   <artifactId>rspace-digital-commons-data-adapter</artifactId>
@@ -85,12 +85,12 @@
     <dependency>
       <groupId>com.github.rspace-os</groupId>
       <artifactId>rspace-repository-spi</artifactId>
-      <version>2.0.0</version>
+      <version>rsdev-444-upgrade-to-spring-6-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.github.rspace-os</groupId>
       <artifactId>digital-commons-data-java-client</artifactId>
-      <version>0.0.4</version>
+      <version>rsdev-444-upgrade-to-spring-6-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>
