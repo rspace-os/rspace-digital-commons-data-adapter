@@ -90,7 +90,7 @@
     <dependency>
       <groupId>com.github.rspace-os</groupId>
       <artifactId>digital-commons-data-java-client</artifactId>
-      <version>rsdev-444-upgrade-to-spring-6-SNAPSHOT</version>
+      <version>rsdev-444-upgrade-to-spring-6-f66247c067-1</version>
     </dependency>
   </dependencies>
 </project>
