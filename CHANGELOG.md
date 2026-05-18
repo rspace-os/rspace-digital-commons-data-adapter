@@ -1,9 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 2.0.0 2026-04-29
+## 1.0.0 2026-04-29
 - Spring 6 / Hibernate 6 / Jakarta namespace migration
 - Switch to rspace-parent 3.0.0
+- First major version (previous releases were 0.0.x)
 
 ## [0.0.2]
  - RSpace adapter for the Digital Commons Data integration.
