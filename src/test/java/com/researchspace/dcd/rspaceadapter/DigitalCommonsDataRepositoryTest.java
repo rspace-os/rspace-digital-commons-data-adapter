@@ -1,6 +1,8 @@
 package com.researchspace.dcd.rspaceadapter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -91,6 +93,48 @@ class DigitalCommonsDataRepositoryTest {
     RepositoryOperationResult dataset = repoAdapter.submitDeposit(null, file,
         metadata, repositoryConfig);
     assertTrue(dataset.isSucceeded());
+    assertEquals(new URL("https://data.mendeley.com/drafts/d7s7hypvt4"), dataset.getUrl());
+    assertEquals(new URL("https://doi.org/10.17632/d7s7hypvt4.1"), dataset.getDoiUrl());
+  }
+
+  @Test
+  void submitDepositWithoutDoiSucceedsWithEmptyDoiLink() throws IOException {
+    DigitalCommonsDataDataset datasetWithoutDoi = getDigitalCommonsDataDatasetResponse();
+    datasetWithoutDoi.setDoi(null);
+    when(digitalCommonsDataClient.createDataset(any(DigitalCommonDataSubmission.class)))
+        .thenReturn(datasetWithoutDoi);
+    File file = new File("src/test/resources/files/test.txt");
+    RepositoryOperationResult result = repoAdapter.submitDeposit(null, file,
+        getTestSubmissionMetaData(), repositoryConfig);
+    assertTrue(result.isSucceeded());
+    assertEquals(new URL("https://data.mendeley.com/drafts/d7s7hypvt4"), result.getUrl());
+    assertNull(result.getDoiUrl());
+  }
+
+  @Test
+  void submitDepositWithDoiButNoDoiIdSucceedsWithEmptyDoiLink() throws IOException {
+    DigitalCommonsDataDataset datasetWithoutDoiId = getDigitalCommonsDataDatasetResponse();
+    datasetWithoutDoiId.getDoi().setId(null);
+    when(digitalCommonsDataClient.createDataset(any(DigitalCommonDataSubmission.class)))
+        .thenReturn(datasetWithoutDoiId);
+    File file = new File("src/test/resources/files/test.txt");
+    RepositoryOperationResult result = repoAdapter.submitDeposit(null, file,
+        getTestSubmissionMetaData(), repositoryConfig);
+    assertTrue(result.isSucceeded());
+    assertNull(result.getDoiUrl());
+  }
+
+  @Test
+  void submitDepositWithBlankDoiIdSucceedsWithEmptyDoiLink() throws IOException {
+    DigitalCommonsDataDataset datasetWithBlankDoiId = getDigitalCommonsDataDatasetResponse();
+    datasetWithBlankDoiId.getDoi().setId("  ");
+    when(digitalCommonsDataClient.createDataset(any(DigitalCommonDataSubmission.class)))
+        .thenReturn(datasetWithBlankDoiId);
+    File file = new File("src/test/resources/files/test.txt");
+    RepositoryOperationResult result = repoAdapter.submitDeposit(null, file,
+        getTestSubmissionMetaData(), repositoryConfig);
+    assertTrue(result.isSucceeded());
+    assertNull(result.getDoiUrl());
   }
 
   @Test

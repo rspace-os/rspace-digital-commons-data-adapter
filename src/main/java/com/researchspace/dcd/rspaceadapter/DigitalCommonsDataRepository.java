@@ -19,6 +19,7 @@ import com.researchspace.repository.spi.SubmissionMetadata;
 import com.researchspace.repository.spi.properties.RepoProperty;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
@@ -59,13 +60,21 @@ public class DigitalCommonsDataRepository implements IRepository, RepositoryConf
           file.getName(), file);
       return new RepositoryOperationResult(true,
           "Export uploaded to DigitalCommonsData successfully.",
-          new URL(repositoryConfig.getServerURL() + "/drafts/" + deposition.getId()));
+          new URL(repositoryConfig.getServerURL() + "/drafts/" + deposition.getId()),
+          doiLink(deposition));
 
     } catch (RestClientException | IOException e) {
       log.error("Exception occurred while submitting to DigitalCommonsData", e);
       return new RepositoryOperationResult(false,
           e.getClass().getSimpleName() + "Exception occurred while submitting to DigitalCommonsData", null);
     }
+  }
+
+  private URL doiLink(DigitalCommonsDataDataset deposition) throws MalformedURLException {
+    if (deposition.getDoi() == null || Strings.isBlank(deposition.getDoi().getId())) {
+      return null;
+    }
+    return new URL("https://doi.org/" + deposition.getDoi().getId());
   }
 
   private DigitalCommonDataSubmission createDatasetRequest(SubmissionMetadata submissionMetadata) {

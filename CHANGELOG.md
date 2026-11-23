@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.1.0 2026-11-23
+- Deposit result now includes the reserved DOI as a `https://doi.org/` link. The link is left empty when Digital Commons Data returns no DOI, and the deposit still succeeds.
+
 ## 1.0.0 2026-07-28
 - Spring 6 / Hibernate 6 / Jakarta namespace migration
 - Switch to rspace-parent 3.0.0
