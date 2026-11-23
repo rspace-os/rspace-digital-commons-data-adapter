@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## 1.1.0 2026-11-23
 - Deposit result now includes the reserved DOI as a `https://doi.org/` link. The link is left empty when Digital Commons Data returns no DOI, and the deposit still succeeds.
 
 ## 1.0.0 2026-07-28
