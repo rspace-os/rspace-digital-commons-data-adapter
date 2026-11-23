@@ -93,18 +93,8 @@ class DigitalCommonsDataRepositoryTest {
     RepositoryOperationResult dataset = repoAdapter.submitDeposit(null, file,
         metadata, repositoryConfig);
     assertTrue(dataset.isSucceeded());
-  }
-
-  @Test
-  void submitDepositReturnsReservedDoiAsDoiLink() throws IOException {
-    when(digitalCommonsDataClient.createDataset(any(DigitalCommonDataSubmission.class))).thenReturn(
-        getDigitalCommonsDataDatasetResponse());
-    File file = new File("src/test/resources/files/test.txt");
-    RepositoryOperationResult result = repoAdapter.submitDeposit(null, file,
-        getTestSubmissionMetaData(), repositoryConfig);
-    assertTrue(result.isSucceeded());
-    assertEquals(new URL("https://data.mendeley.com/drafts/d7s7hypvt4"), result.getUrl());
-    assertEquals(new URL("https://doi.org/10.17632/d7s7hypvt4.1"), result.getDoiUrl());
+    assertEquals(new URL("https://data.mendeley.com/drafts/d7s7hypvt4"), dataset.getUrl());
+    assertEquals(new URL("https://doi.org/10.17632/d7s7hypvt4.1"), dataset.getDoiUrl());
   }
 
   @Test
