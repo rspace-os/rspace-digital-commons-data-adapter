@@ -135,6 +135,19 @@ class DigitalCommonsDataRepositoryTest {
   }
 
   @Test
+  void submitDepositWithBlankDoiIdSucceedsWithEmptyDoiLink() throws IOException {
+    DigitalCommonsDataDataset datasetWithBlankDoiId = getDigitalCommonsDataDatasetResponse();
+    datasetWithBlankDoiId.getDoi().setId("  ");
+    when(digitalCommonsDataClient.createDataset(any(DigitalCommonDataSubmission.class)))
+        .thenReturn(datasetWithBlankDoiId);
+    File file = new File("src/test/resources/files/test.txt");
+    RepositoryOperationResult result = repoAdapter.submitDeposit(null, file,
+        getTestSubmissionMetaData(), repositoryConfig);
+    assertTrue(result.isSucceeded());
+    assertNull(result.getDoiUrl());
+  }
+
+  @Test
   void testSubmitDepositFailCreatingDataset() throws IOException {
     when(digitalCommonsDataClient.createDataset(any(DigitalCommonDataSubmission.class)))
         .thenThrow(HttpClientErrorException.class);
